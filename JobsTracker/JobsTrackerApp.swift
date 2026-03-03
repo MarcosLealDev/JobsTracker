@@ -10,12 +10,11 @@ import SwiftData
 
 @main
 struct JobsTrackerApp: App {
-    var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            Item.self,
-        ])
+    // Static so JobAnalysisCoordinator can access the container without
+    // a reference to the App instance.
+    static let sharedModelContainer: ModelContainer = {
+        let schema = Schema([JobEntry.self, TechnicalSkill.self])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-
         do {
             return try ModelContainer(for: schema, configurations: [modelConfiguration])
         } catch {
@@ -27,6 +26,6 @@ struct JobsTrackerApp: App {
         WindowGroup {
             ContentView()
         }
-        .modelContainer(sharedModelContainer)
+        .modelContainer(JobsTrackerApp.sharedModelContainer)
     }
 }

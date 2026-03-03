@@ -1,0 +1,19 @@
+# General macOS/Xcode Ignores
+.DS_Store
+xcuserdata/
+DerivedData/
+*.xcscmblueprint
+*.xccheckout
+*.ipa
+*.dSYM
+.build/
+Pods/
+Carthage/
+
+# Project Settings (Keep shared, ignore local)
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+!*.xcodeproj/project.xcworkspace/
+!*.xcworkspace/contents.xcworkspacedata
+
