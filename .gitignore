@@ -16,4 +16,5 @@ Carthage/
 !*.xcodeproj/xcshareddata/
 !*.xcodeproj/project.xcworkspace/
 !*.xcworkspace/contents.xcworkspacedata
+confidential.xml
 

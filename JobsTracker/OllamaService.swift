@@ -14,7 +14,7 @@ actor OllamaService {
     static let shared = OllamaService()
 
     private let baseURL = URL(string: "http://localhost:11434")!
-    private let modelName = "llama3.1:latest"
+    private let modelName = "llama3.2:latest"
 
     // MARK: - Public API
 

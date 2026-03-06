@@ -102,6 +102,7 @@ struct JobDetailView: View {
                 EditableRow(label: "Company",  text: optionalBinding(\.companyName),  prompt: "Company name")
                 EditableRow(label: "Address",  text: optionalBinding(\.companyAddress), prompt: "Company address")
                 EditableRow(label: "Website",  text: optionalBinding(\.companyWebsite),  prompt: "Company website")
+                EditableRow(label: "URL",      text: optionalBinding(\.jobURL),        prompt: "Job posting URL")
                 DetailRow(label: "Added", value: entry.createdAt.formatted(date: .long, time: .shortened))
             }
             .padding(.vertical, 4)
@@ -171,17 +172,18 @@ struct JobDetailView: View {
                 .frame(maxWidth: .infinity, minHeight: 120, alignment: .leading)
                 .padding(.top, 4)
 
-            if entry.status == .done || entry.status == .failed {
-                HStack {
-                    Spacer()
+            HStack {
+                Spacer()
+
+                if entry.status == .done || entry.status == .failed {
                     Button("Re-analyze") {
                         reanalyze()
                     }
                     .buttonStyle(.borderedProminent)
                     .controlSize(.small)
                 }
-                .padding(.top, 4)
             }
+            .padding(.top, 4)
         }
     }
 

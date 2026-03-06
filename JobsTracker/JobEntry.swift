@@ -21,6 +21,7 @@ final class JobEntry {
     var companyAddress: String?
     var companyWebsite: String?
     var jobPosition: String?
+    var jobURL: String?
 
     @Relationship(deleteRule: .cascade, inverse: \TechnicalSkill.entry)
     var skills: [TechnicalSkill] = []
